@@ -63,7 +63,7 @@ variable "vpc_single_nat_gateway" {
 
 //////generic/////////////////////////////
 variable "aws-region" {
-  default = "eu-west-1"
+  default = "ap-south-1"
 }
 
 variable "environment" {
