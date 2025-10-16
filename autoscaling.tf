@@ -8,14 +8,14 @@ resource "aws_launch_template" "web" {
     security_groups             = [aws_security_group.public-sg.id]
   }
 
-  /*user_data = base64encode(<<-EOF
+  user_data = base64encode(<<-EOF
               #!/bin/bash
               echo "Hello from Auto Scaling Group" > /var/www/html/index.html
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
               EOF
-  )*/
+  )
 }
 
 resource "aws_autoscaling_group" "web_asg" {
