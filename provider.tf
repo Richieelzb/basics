@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket       = "terraform-bucket-lzb-001"
-    key          = "kubernetes/terraform.tfstate"
+    key          = "basics/terraform.tfstate"
     region       = "ap-south-1"
     //profile      = "default"
     #use_lockfile = true
