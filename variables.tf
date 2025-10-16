@@ -6,7 +6,7 @@ variable "instance-type-list" {
 }
 
 variable "key-pair" {
-  default = "lupfumo-key"
+  default = "lupfumo-key-mumbai"
 }
 
 ///VPC Modules ///////////////////////////////////////////////////////////////////////////

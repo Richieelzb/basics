@@ -1,4 +1,4 @@
-resource "aws_instance" "ec2-vm-master" {
+/*resource "aws_instance" "ec2-vm-master" {
   ami = data.aws_ami.my-data-ami.id
   //ami = "ami-0bc691261a82b32bc"
   instance_type = var.instance-type-list[2]
@@ -9,4 +9,4 @@ resource "aws_instance" "ec2-vm-master" {
   tags = {
     Name = "master-ec2"
   }
-}
+}*/
