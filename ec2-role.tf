@@ -15,12 +15,12 @@ resource "aws_iam_role" "codedeploy_ec2_role" {
     ]
   })
 }
-
+/*
 resource "aws_iam_role_policy_attachment" "codedeploy_policy_attachment" {
   role       = aws_iam_role.codedeploy_ec2_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2RoleforAWSCodeDeploy"
 }
-
+*/
 
 resource "aws_iam_policy" "codedeploy_custom_policy" {
   name = "CodeDeployEC2Policy"
