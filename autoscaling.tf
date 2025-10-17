@@ -3,6 +3,10 @@ resource "aws_launch_template" "web" {
   image_id      = "ami-0b22c8a08f90a1ef7" # Replace with a valid AMI ID
   instance_type = "t3.micro"
 
+  iam_instance_profile {
+    name = aws_iam_instance_profile.codedeploy_instance_profile.name
+  }
+
   network_interfaces {
     associate_public_ip_address = true
     security_groups             = [aws_security_group.public-sg.id]
