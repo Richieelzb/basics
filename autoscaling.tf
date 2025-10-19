@@ -1,4 +1,4 @@
-/*resource "aws_launch_template" "web" {
+resource "aws_launch_template" "web" {
   name_prefix   = "web-template-"
   image_id      = "ami-0b22c8a08f90a1ef7" # Replace with a valid AMI ID
   instance_type = "t3.micro"
@@ -23,9 +23,9 @@
 }
 
 resource "aws_autoscaling_group" "web_asg" {
-  desired_capacity     = 3
+  desired_capacity     = 2
   max_size             = 5
-  min_size             = 3
+  min_size             = 2
   vpc_zone_identifier  = module.vpc.public_subnets[*]
   launch_template {
     id      = aws_launch_template.web.id
@@ -40,4 +40,4 @@ resource "aws_autoscaling_group" "web_asg" {
     value               = "web-instance"
     propagate_at_launch = true
   }
-}*/
+}
