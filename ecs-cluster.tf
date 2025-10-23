@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "lzb-project-task" {
   container_definitions = jsonencode([
     {
       name      = "angular-container"
-      image     = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_REPO_NAME}:tag"
+      image     = "905418287959.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
       essential = true
       portMappings = [
         {
