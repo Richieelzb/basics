@@ -55,7 +55,7 @@ resource "aws_ecs_service" "lzb-project-svc" {
   cluster         = aws_ecs_cluster.lzb-project-ecs.id
   task_definition = aws_ecs_task_definition.lzb-project-task.arn
   launch_type     = "FARGATE"
-  desired_count   = 1
+  desired_count   = 2
 
   network_configuration {
     subnets         = module.vpc.public_subnets[*]
