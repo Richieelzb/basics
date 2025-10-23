@@ -35,7 +35,7 @@ resource "aws_ecs_task_definition" "lzb-project-task" {
 
   container_definitions = jsonencode([
     {
-      name      = "angular-container"
+      name      = local.container_name
       image     = "905418287959.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
       essential = true
       portMappings = [
@@ -62,4 +62,14 @@ resource "aws_ecs_service" "lzb-project-svc" {
     security_groups = [aws_security_group.public-sg.id]
     assign_public_ip = true
   }
+
+  
+  load_balancer {
+    target_group_arn = aws_lb_target_group.tg.arn
+    container_name   = local.container_name
+    container_port   = 80
+}
+
+  depends_on = [aws_lb_listener.example]
+
 }

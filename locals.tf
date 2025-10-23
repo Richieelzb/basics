@@ -8,4 +8,6 @@ locals {
     owners      = local.owners
     environment = local.Environment
   }
+
+  container_name = "lzb-container"
 }

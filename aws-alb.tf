@@ -11,6 +11,7 @@ resource "aws_lb_target_group" "tg" {
   name     = "lzb-alb-targets"
   port     = 80
   protocol = "HTTP"
+  target_type = "ip"
   vpc_id      = module.vpc.vpc_id
 }
 
