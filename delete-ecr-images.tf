@@ -12,4 +12,3 @@ resource "null_resource" "delete_ecr_images" {
     EOT
   }
 }
-``
