@@ -70,6 +70,6 @@ resource "aws_ecs_service" "lzb-project-svc" {
     container_port   = 80
 }
 
-  depends_on = [aws_lb_listener.example]
+  depends_on = [aws_lb_listener.listener]
 
 }
