@@ -7,9 +7,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "terraform-bucket-lzb-001"
+    //bucket       = "terraform-bucket-lzb-001" //vodacom account
+    bucket       = "terraform-practice-lzb-001" //personal account
     key          = "basics/terraform.tfstate"
-    region       = "ap-south-1"
+    region       = "eu-west-1"
     //profile      = "default"
     #use_lockfile = true
   }
