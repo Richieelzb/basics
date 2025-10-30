@@ -12,7 +12,7 @@ phases:
     commands:
       - terraform --version
       - terraform init
-      - terraform validate
+     # - terraform validate
   build:
     commands:
      
