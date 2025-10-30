@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "lzb-project-task" {
   container_definitions = jsonencode([
     {
       name      = local.container_name
-      image     = "905418287959.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
+      image     = "654654440523.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
       essential = true
       portMappings = [
         {
