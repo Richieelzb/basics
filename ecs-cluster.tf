@@ -43,7 +43,7 @@ resource "aws_ecs_task_definition" "lzb-project-task" {
         logDriver = "awslogs",
         options = {
           awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name,
-          awslogs-region        = "eu-west-1", # Change to your region
+          awslogs-region        = "eu-west-1",
           awslogs-stream-prefix = "ecs"
         }
       }
