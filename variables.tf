@@ -9,6 +9,12 @@ variable "key-pair" {
   default = "lupfumo-key"
 }
 
+variable "zone_id" {
+  description = "Route 53 Hosted Zone ID for DNS validation"
+  type        = string
+  default = "Z03869012ULXJETVO373"
+}
+
 ///VPC Modules ///////////////////////////////////////////////////////////////////////////
 variable "vpc_name" {
   type    = string
