@@ -8,12 +8,12 @@ resource "aws_lb" "alb" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  name     = "lzb-alb-targets"
-  port     = 80
-  protocol = "HTTP"
-  target_type = "ip"
+  name                 = "lzb-alb-targets"
+  port                 = 80
+  protocol             = "HTTP"
+  target_type          = "ip"
   deregistration_delay = "30"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id               = module.vpc.vpc_id
 }
 
 resource "aws_lb_listener" "listener" {
@@ -21,8 +21,8 @@ resource "aws_lb_listener" "listener" {
   port              = 443
   protocol          = "HTTPS"
 
-  ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate_validation.lzb-certificate.certificate_arn
+  ssl_policy      = "ELBSecurityPolicy-2016-08"
+  certificate_arn = aws_acm_certificate_validation.lzb-certificate.certificate_arn
 
   default_action {
     type             = "forward"

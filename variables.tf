@@ -12,17 +12,17 @@ variable "key-pair" {
 variable "zone_id" {
   description = "Route 53 Hosted Zone ID for DNS validation"
   type        = string
-  default = "Z03869012ULXJETVO373"
+  default     = "Z03869012ULXJETVO373"
 }
 
 ///VPC Modules ///////////////////////////////////////////////////////////////////////////
 variable "vpc_name" {
-  type    = string
- # default = "vpc-lzb"
+  type = string
+  # default = "vpc-lzb"
 }
 
 variable "vpc_availability_zones" {
-  type  = list(string)
+  type    = list(string)
   default = []
 }
 

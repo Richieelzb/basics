@@ -22,7 +22,7 @@ resource "aws_ecr_repository_policy" "my_app_policy" {
         Sid       = "AllowPull"
         Effect    = "Allow"
         Principal = "*"
-        Action    = [
+        Action = [
           "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
           "ecr:BatchCheckLayerAvailability"

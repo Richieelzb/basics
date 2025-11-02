@@ -27,18 +27,18 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
 
 resource "aws_ecs_task_definition" "lzb-project-task" {
   family                   = "lzb-project-task"
-  network_mode            = "awsvpc"
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                     = "256"
-  memory                  = "512"
-  execution_role_arn      = aws_iam_role.ecs_task_execution_role.arn
+  cpu                      = "256"
+  memory                   = "512"
+  execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
   container_definitions = jsonencode([
     {
       name      = local.container_name
       image     = "654654440523.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
       essential = true
-      
+
       logConfiguration = {
         logDriver = "awslogs",
         options = {
@@ -68,17 +68,17 @@ resource "aws_ecs_service" "lzb-project-svc" {
   desired_count   = 2
 
   network_configuration {
-    subnets         = module.vpc.public_subnets[*]
-    security_groups = [aws_security_group.public-sg.id]
+    subnets          = module.vpc.public_subnets[*]
+    security_groups  = [aws_security_group.public-sg.id]
     assign_public_ip = true
   }
 
-  
+
   load_balancer {
     target_group_arn = aws_lb_target_group.tg.arn
     container_name   = local.container_name
     container_port   = 80
-}
+  }
 
   depends_on = [aws_lb_listener.listener]
 
