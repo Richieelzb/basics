@@ -38,6 +38,16 @@ resource "aws_ecs_task_definition" "lzb-project-task" {
       name      = local.container_name
       image     = "654654440523.dkr.ecr.ap-south-1.amazonaws.com/lzb-project-repo:latest"
       essential = true
+      
+      logConfiguration = {
+        logDriver = "awslogs",
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name,
+          awslogs-region        = "eu-west-1", # Change to your region
+          awslogs-stream-prefix = "ecs"
+        }
+      }
+
       portMappings = [
         {
           containerPort = 80
