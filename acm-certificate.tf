@@ -1,10 +1,7 @@
 resource "aws_acm_certificate" "lzb-cert" {
   domain_name       = "wallawalla.co.za"
+  subject_alternative_names = ["www.wallawalla.co.za"]
   validation_method = "DNS"
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
 
 resource "aws_route53_record" "cert_validation" {
