@@ -73,7 +73,6 @@ resource "aws_ecs_service" "lzb-project-svc" {
     assign_public_ip = true
   }
 
-
   load_balancer {
     target_group_arn = aws_lb_target_group.tg.arn
     container_name   = local.container_name
